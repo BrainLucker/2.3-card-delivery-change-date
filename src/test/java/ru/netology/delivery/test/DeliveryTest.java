@@ -40,7 +40,7 @@ public class DeliveryTest {
         // Повторная отправка формы с новой датой
         form.$("[data-test-id=date] input.input__control").doubleClick().sendKeys(secondMeetingDate);
         form.$$("button").find(exactText("Запланировать")).click();
-        $$("[data-test-id=replan-notification] button").find(exactText("Запланировать")).click();
+        $$("[data-test-id=replan-notification] button").find(exactText("Перепланировать")).click();
         $("[data-test-id=success-notification] .notification__content").should(appear).shouldHave(text(notification + secondMeetingDate));
     }
 }
