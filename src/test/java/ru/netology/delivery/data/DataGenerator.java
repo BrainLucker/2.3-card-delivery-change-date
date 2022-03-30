@@ -15,26 +15,22 @@ public class DataGenerator {
 
     public static String generateDate(int shift) {
         val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        val date = LocalDate.now().plusDays(shift).format(formatter);
-        return date;
+        return LocalDate.now().plusDays(shift).format(formatter);
     }
 
     public static String generateCity(String locale) {
         val faker = new Faker(new Locale(locale));
-        val city = faker.address().cityName();
-        return city;
+        return faker.address().cityName();
     }
 
     public static String generateName(String locale) {
         val faker = new Faker(new Locale(locale));
-        val name = faker.name().fullName();
-        return name;
+        return faker.name().fullName();
     }
 
     public static String generatePhone(String locale) {
         val faker = new Faker(new Locale(locale));
-        val phone = faker.phoneNumber().phoneNumber();
-        return phone;
+        return faker.phoneNumber().phoneNumber();
     }
 
     public static class Registration {
@@ -42,8 +38,7 @@ public class DataGenerator {
         }
 
         public static UserInfo generateUser(String locale) {
-            val user = new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
-            return user;
+            return new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
         }
     }
 
