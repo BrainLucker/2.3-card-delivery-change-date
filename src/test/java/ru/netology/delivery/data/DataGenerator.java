@@ -26,7 +26,7 @@ public class DataGenerator {
     }
 
     @SneakyThrows
-    public static String generateCity(String locale) {
+    public static String generateCity() {
         List<String> cities = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader("./src/test/resources/cities.csv", StandardCharsets.UTF_8))) {
             String line;
@@ -54,7 +54,7 @@ public class DataGenerator {
         }
 
         public static UserInfo generateUser(String locale) {
-            return new UserInfo(generateCity(locale), generateName(locale), generatePhone(locale));
+            return new UserInfo(generateCity(), generateName(locale), generatePhone(locale));
         }
     }
 

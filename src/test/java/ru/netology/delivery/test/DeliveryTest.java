@@ -13,7 +13,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class DeliveryTest {
 
     @BeforeEach
-    void setup() {
+    public void setup() {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1000x800";
         open("http://localhost:9999");
@@ -21,7 +21,7 @@ public class DeliveryTest {
 
     @Test
     @DisplayName("Should successful plan and replan meeting")
-    void shouldSuccessfulPlanAndReplanMeeting() {
+    public void shouldSuccessfulPlanAndReplanMeeting() {
         var validUser = DataGenerator.Registration.generateUser("ru");
         var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
